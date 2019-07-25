@@ -10,8 +10,8 @@ An asm implementation of syntax error detector
 Simple steps to implement the application in 8086
 
 ## Prerequisites
-*Dosbox - to emulate a 8086 environment and run the application
-*emu8086 - to view and debug the source code
+* Dosbox - to emulate a 8086 environment and run the application
+* emu8086 - to view and debug the source code
 
 ## Syntax
 *Place the files on to the root folder of 8086
