@@ -14,9 +14,9 @@ Simple steps to implement the application in 8086
 * emu8086 - to view and debug the source code
 
 ## Syntax
-*Place the files on to the root folder of 8086
+* Place the files on to the root folder of 8086
 
-* Open any text editor and write this sample code and save the file on the root folder of 8086 
+* Open any text editor and write this sample code and save the file on the root folder of 8086 and save it as code.txt
 
 ```
 myAge=20;
@@ -34,5 +34,5 @@ tasm compiler+moving;
 link compiler+moving;
 ```
 
-*Run the file
+* Run the file
 
