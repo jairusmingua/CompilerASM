@@ -42,9 +42,10 @@ PUBLIC run
    press db 'Press esc to close app....'
    color db 1 
    about db 12,36,'About..', 50 dup('')
-   hightlight db 0fh 
-   isNamedisplayed db 'f'  
-   names db 'Jairus Mingua',10,13,'Exequiel Bjorn',10,13,'Trexil'
+   hightlight db 0fh     
+   isNamedisplayed db 'f'
+    
+   names db 10,13,'Jairus Mingua',10,13,'Exequiel Bjorn',10,13,'Trexil'
 .code           
  run proc
     mov ax,@data
@@ -97,21 +98,22 @@ PUBLIC run
     jmp endmove
     endmove:   
     clear  
-    cursor 10,27
+    cursor 10,27    
+     
     print press,04fh,25               
    
     cursor about[0],about[1],about[2] 
-    print about[2],hightlight,5
+    print about[2],hightlight,5        
     cursor xpos,ypos 
-    call displayNames
-    print success,color,25
+    print success,color,25   
+    call displayNames 
    
     ret
  move endp   
  displayNames proc
     cmp isNamedisplayed,'t'
     jne i  
-    cursor 25,27
+    cursor 13,20
     print names,0fh,37
     ret 
     i:
@@ -119,15 +121,15 @@ PUBLIC run
  displayNames endp
  checkmouse proc
     mov ax, 3
-    int 33h   
-    cmp cx,word ptr about[1]
-    jne exitmouse
-    cmp dx,word ptr about[0]
+    int 33h  
+    cmp bx,1
     jne exitmouse  
+    ;cmp cx,word ptr about[1]
+    ;jne exitmouse
+    ;cmp dx,word ptr about[0]
+    ;jne exitmouse  
     mov al,0Bh
     mov hightlight,al
-    cmp bx,1
-    jne exitmouse          
     cmp isNamedisplayed,'f'
     jne exitmouse
     mov isNamedisplayed,'t'

@@ -1,6 +1,6 @@
 include iostream.inc  
 .model small     
-; EXTRN run:proc
+ EXTRN run:proc
 .data   
  filename db "code.txt",0
  handle dw ?      
@@ -101,7 +101,7 @@ main proc
  mov ah,4ch
  int 21h
  anim:
-   ; call run 
+    call run 
 main endp        
 
 printBuff proc
